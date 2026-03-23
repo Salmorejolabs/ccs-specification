@@ -1,0 +1,57 @@
+system_id: "ecommerce-system"
+version: "0.1.1"
+
+core:
+  purpose: "Optimize an online store by analyzing products, customers, and operations"
+
+governance:
+  policies:
+    P1_COST: 0.03
+    P2_TIME: 1000
+    P3_ETHICS: "NO_MANIPULATION"
+    P4_ROBUSTNESS: "FAIL_GRACEFULLY"
+    P5_TRANSPARENCY: "TRACEABLE_EXPLAINABLE"
+    P6_PRIVACY: "HARD_MASKING"
+    P7_SOVEREIGNTY: "HUMAN_OVERRIDE"
+    P8_INNOVATION: "DISTILLATION_ALLOWED"
+
+layers:
+  - id: "L1"
+    name: "Intention"
+    description: "Human describes the business goal (increase sales, reduce returns, etc.)"
+  - id: "L2"
+    name: "Blueprint"
+    description: "Breakdown into catalog analysis, customer insights, logistics, and pricing"
+  - id: "L3"
+    name: "Execution"
+    description: "Agents analyze data, generate insights, and propose actions"
+  - id: "L4"
+    name: "Observability"
+    description: "Traceability, metrics, and performance monitoring"
+
+agents:
+  - id: "catalog-analyst"
+    role: "Product analysis"
+    capabilities:
+      - "detect low-performing products"
+      - "analyze product attributes"
+      - "suggest improvements"
+    limits:
+      max_cost: 0.015
+
+  - id: "customer-analyst"
+    role: "Customer insights"
+    capabilities:
+      - "segment customers"
+      - "analyze behavior patterns"
+      - "predict churn"
+    limits:
+      max_cost: 0.015
+
+  - id: "pricing-engine"
+    role: "Pricing optimization"
+    capabilities:
+      - "suggest price adjustments"
+      - "evaluate elasticity"
+    limits:
+      requires_human_approval: true
