@@ -1,0 +1,57 @@
+system_id: "research-lab"
+version: "0.1.1"
+
+core:
+  purpose: "Support scientific research by analyzing literature, generating hypotheses, and designing experiments"
+
+governance:
+  policies:
+    P1_COST: 0.05
+    P2_TIME: 1800
+    P3_ETHICS: "STRICT_RESEARCH_COMPLIANCE"
+    P4_ROBUSTNESS: "FAIL_GRACEFULLY"
+    P5_TRANSPARENCY: "TRACEABLE_EXPLAINABLE"
+    P6_PRIVACY: "HARD_MASKING"
+    P7_SOVEREIGNTY: "HUMAN_OVERRIDE"
+    P8_INNOVATION: "DISTILLATION_ALLOWED"
+
+layers:
+  - id: "L1"
+    name: "Intention"
+    description: "Human defines the research question or scientific goal"
+  - id: "L2"
+    name: "Blueprint"
+    description: "Breakdown into literature review, hypothesis generation, and experimental design"
+  - id: "L3"
+    name: "Execution"
+    description: "Agents analyze papers, propose hypotheses, and design experiments"
+  - id: "L4"
+    name: "Observability"
+    description: "Traceability, citations, reproducibility checks"
+
+agents:
+  - id: "literature-analyst"
+    role: "Scientific literature review"
+    capabilities:
+      - "summarize research papers"
+      - "extract key findings"
+      - "map related work"
+    limits:
+      max_cost: 0.02
+
+  - id: "hypothesis-generator"
+    role: "Hypothesis creation"
+    capabilities:
+      - "propose testable hypotheses"
+      - "identify knowledge gaps"
+    limits:
+      max_cost: 0.015
+
+  - id: "experiment-designer"
+    role: "Experimental design"
+    capabilities:
+      - "design experiments"
+      - "define variables and controls"
+      - "estimate sample sizes"
+    limits:
+      requires_human_approval: true
