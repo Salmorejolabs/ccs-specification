@@ -1,0 +1,57 @@
+system_id: "law-firm"
+version: "0.1.1"
+
+core:
+  purpose: "Assist a legal team in research, drafting, and case preparation"
+
+governance:
+  policies:
+    P1_COST: 0.04
+    P2_TIME: 1200
+    P3_ETHICS: "STRICT_COMPLIANCE"
+    P4_ROBUSTNESS: "FAIL_GRACEFULLY"
+    P5_TRANSPARENCY: "TRACEABLE_EXPLAINABLE"
+    P6_PRIVACY: "HARD_MASKING"
+    P7_SOVEREIGNTY: "HUMAN_OVERRIDE"
+    P8_INNOVATION: "DISTILLATION_ALLOWED"
+
+layers:
+  - id: "L1"
+    name: "Intention"
+    description: "Human describes the legal question or case"
+  - id: "L2"
+    name: "Blueprint"
+    description: "Breakdown into research tasks, arguments, risks, and precedents"
+  - id: "L3"
+    name: "Execution"
+    description: "Agents perform research, drafting, and analysis"
+  - id: "L4"
+    name: "Observability"
+    description: "Traceability, citations, and compliance checks"
+
+agents:
+  - id: "researcher"
+    role: "Legal research"
+    capabilities:
+      - "search jurisprudence"
+      - "summarize case law"
+      - "extract relevant precedents"
+    limits:
+      max_cost: 0.02
+
+  - id: "drafter"
+    role: "Document drafting"
+    capabilities:
+      - "draft legal arguments"
+      - "structure briefs"
+      - "generate summaries"
+    limits:
+      requires_human_approval: true
+
+  - id: "risk-analyst"
+    role: "Risk assessment"
+    capabilities:
+      - "identify legal risks"
+      - "evaluate argument strength"
+    limits:
+      max_cost: 0.01
