@@ -1,0 +1,55 @@
+system_id: "film-studio"
+version: "0.1.1"
+
+core:
+  purpose: "Produce a complete film from a human idea"
+
+governance:
+  policies:
+    P1_COST: 0.10
+    P2_TIME: 2000
+    P3_ETHICS: "VOTING_2_3"
+    P4_ROBUSTNESS: "FAIL_GRACEFULLY"
+    P5_TRANSPARENCY: "TRACEABLE_EXPLAINABLE"
+    P6_PRIVACY: "MASK_SENSITIVE"
+    P7_SOVEREIGNTY: "HUMAN_OVERRIDE"
+    P8_INNOVATION: "DISTILLATION_ALLOWED"
+
+layers:
+  - id: "L1"
+    name: "Intention"
+    description: "Human describes the film concept"
+  - id: "L2"
+    name: "Blueprint"
+    description: "Breakdown into script, scenes, characters, production tasks"
+  - id: "L3"
+    name: "Execution"
+    description: "Agents write, storyboard, plan, and coordinate"
+  - id: "L4"
+    name: "Observability"
+    description: "Traceability, logs, and quality checks"
+
+agents:
+  - id: "writer"
+    role: "Scriptwriting"
+    capabilities:
+      - "expand scenes"
+      - "write dialogues"
+    limits:
+      max_cost: 0.02
+
+  - id: "storyboarder"
+    role: "Visual planning"
+    capabilities:
+      - "generate scene descriptions"
+      - "create shot lists"
+    limits:
+      max_cost: 0.03
+
+  - id: "producer"
+    role: "Coordination"
+    capabilities:
+      - "schedule tasks"
+      - "validate deliverables"
+    limits:
+      requires_human_approval: true
